@@ -25,8 +25,7 @@ while(x > 1) {
 }
 
 /*
-flex lexer.l
-bison -d parser.y
-gcc -o parser lex.yy.c parser.tab.c -lfl 
-parser < input.txt
+test
+da izbrojimo
+linije u multiline komentaru
 */
