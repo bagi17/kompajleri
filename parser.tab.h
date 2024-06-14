@@ -54,58 +54,66 @@ extern int yydebug;
     YYEOF = 0,                     /* "end of file"  */
     YYerror = 256,                 /* error  */
     YYUNDEF = 257,                 /* "invalid token"  */
-    NUMBER = 258,                  /* NUMBER  */
-    DNUMBER = 259,                 /* DNUMBER  */
-    HEX_CONSTANT = 260,            /* HEX_CONSTANT  */
-    DEC_CONSTANT = 261,            /* DEC_CONSTANT  */
-    DOUBLE_CONSTANT = 262,         /* DOUBLE_CONSTANT  */
-    STRING_CONSTANT = 263,         /* STRING_CONSTANT  */
-    IDENTIFIER = 264,              /* IDENTIFIER  */
-    IF = 265,                      /* IF  */
-    WHILE = 266,                   /* WHILE  */
-    FOR = 267,                     /* FOR  */
-    SKIP = 268,                    /* SKIP  */
-    THEN = 269,                    /* THEN  */
-    ELSE = 270,                    /* ELSE  */
-    FI = 271,                      /* FI  */
-    DO = 272,                      /* DO  */
-    END = 273,                     /* END  */
-    BREAK = 274,                   /* BREAK  */
-    RETURN = 275,                  /* RETURN  */
-    INTEGER = 276,                 /* INTEGER  */
-    READ = 277,                    /* READ  */
-    WRITE = 278,                   /* WRITE  */
-    LET = 279,                     /* LET  */
-    IN = 280,                      /* IN  */
-    ASSGNOP = 281,                 /* ASSGNOP  */
-    TRUE = 282,                    /* TRUE  */
-    FALSE = 283,                   /* FALSE  */
-    EQ = 284,                      /* EQ  */
-    NE = 285,                      /* NE  */
-    LE = 286,                      /* LE  */
-    GE = 287,                      /* GE  */
-    PP = 288,                      /* PP  */
-    MM = 289,                      /* MM  */
-    LOWER_THAN_ELSE = 290          /* LOWER_THAN_ELSE  */
+    INT_CONSTANT = 258,            /* INT_CONSTANT  */
+    DOUBLE_CONSTANT = 259,         /* DOUBLE_CONSTANT  */
+    STRING_CONSTANT = 260,         /* STRING_CONSTANT  */
+    T_IDENTIFIER = 261,            /* T_IDENTIFIER  */
+    T_TRUE = 262,                  /* T_TRUE  */
+    T_FALSE = 263,                 /* T_FALSE  */
+    T_INT = 264,                   /* T_INT  */
+    T_DOUBLE = 265,                /* T_DOUBLE  */
+    T_BOOL = 266,                  /* T_BOOL  */
+    T_STRING = 267,                /* T_STRING  */
+    T_IF = 268,                    /* T_IF  */
+    T_WHILE = 269,                 /* T_WHILE  */
+    T_FOR = 270,                   /* T_FOR  */
+    T_ELSE = 271,                  /* T_ELSE  */
+    T_DO = 272,                    /* T_DO  */
+    T_BREAK = 273,                 /* T_BREAK  */
+    T_RETURN = 274,                /* T_RETURN  */
+    T_EQ = 275,                    /* T_EQ  */
+    T_NE = 276,                    /* T_NE  */
+    T_LE = 277,                    /* T_LE  */
+    T_GE = 278,                    /* T_GE  */
+    T_PP = 279,                    /* T_PP  */
+    T_MM = 280,                    /* T_MM  */
+    T_AND = 281,                   /* T_AND  */
+    T_OR = 282,                    /* T_OR  */
+    T_NOT_EQUAL = 283,             /* T_NOT_EQUAL  */
+    T_NEWLINE = 284,               /* T_NEWLINE  */
+    T_LEFT_PAR = 285,              /* T_LEFT_PAR  */
+    T_RIGHT_PAR = 286,             /* T_RIGHT_PAR  */
+    T_LEFT_BRA = 287,              /* T_LEFT_BRA  */
+    T_RIGHT_BRA = 288,             /* T_RIGHT_BRA  */
+    T_END_EXP = 289,               /* T_END_EXP  */
+    T_ASSIGN = 290,                /* T_ASSIGN  */
+    T_MINUS = 291,                 /* T_MINUS  */
+    T_PLUS = 292,                  /* T_PLUS  */
+    T_MULTIPLY = 293,              /* T_MULTIPLY  */
+    T_DIV = 294,                   /* T_DIV  */
+    T_MOD = 295,                   /* T_MOD  */
+    T_GREATER_THAN = 296,          /* T_GREATER_THAN  */
+    T_LESS_THAN = 297              /* T_LESS_THAN  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
-#line 12 "parser.y"
+#line 17 "parser.y"
 union semrec
 {
-#line 12 "parser.y"
+#line 17 "parser.y"
 
   int intval;
-  char id[32];
+  char *strval;
   double dval;
+  int boolvalue;
 
-#line 106 "parser.tab.h"
+#line 114 "parser.tab.h"
 
 };
-#line 12 "parser.y"
+#line 17 "parser.y"
 typedef union semrec YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define YYSTYPE_IS_DECLARED 1

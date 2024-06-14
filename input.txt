@@ -1,0 +1,32 @@
+int x=1+2;
+int e = 2;
+double y =1.2;
+bool z = 3.6 >= 3.9;
+int x1=5;
+bool z1=5.2>=3.9 && 5.2<3.9;
+int z1=6-3*2;
+bool p = ((3-1==3-1) && (3-2>3-3)) && (3<3);
+bool test = false;
+if(3 > 5){ 
+    int a=7+2; 
+} else { 
+    int a=8+5;
+}
+bool z2 = !true;
+String s = "marko kralj";
+
+String es = "m";
+
+// testni koment jednolinijski
+
+while(x > 1) {
+    x = x +1;
+    printf("vrijednost x-a je %d",x);
+}
+
+/*
+flex lexer.l
+bison -d parser.y
+gcc -o parser lex.yy.c parser.tab.c -lfl 
+parser < input.txt
+*/
